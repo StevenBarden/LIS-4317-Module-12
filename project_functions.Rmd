@@ -1,0 +1,116 @@
+
+---
+title: "LIS-4317 Final Project Function Documentation"
+author: "Steven Barden"
+date: "2025-04-14"
+output: html_document
+---
+
+## Overview
+
+This R Markdown file documents the main functions developed for my final project in LIS-4317-Week-12. The purpose is to provide a clear and detailed description of each function, including their purpose, inputs, outputs, and example usage. These functions handle data loading, cleaning, transformation, analysis, and visualization for the project.
+
+## Key Functions
+
+### 1. load_data(file_path)
+
+**Purpose**: Loads data from a CSV file into an R data frame.
+
+**Inputs**:
+- `file_path`: A string specifying the path to the CSV file.
+
+**Outputs**:
+- A data frame containing the loaded data.
+
+**Example**:
+```R
+data <- load_data("sample_data.csv")
+```
+
+**Notes**:
+- Includes error handling for invalid file paths.
+- Prints progress if `show_comments` is `TRUE`.
+
+### 2. clean_data(data)
+
+**Purpose**: Cleans the input data by removing duplicates and missing values.
+
+**Inputs**:
+- `data`: A data frame to clean.
+
+**Outputs**:
+- A cleaned data frame with duplicates and missing values removed.
+
+**Example**:
+```R
+cleaned <- clean_data(data)
+```
+
+**Notes**:
+- Ensures data integrity for downstream processing.
+- Logs cleaning steps if `show_comments` is `TRUE`.
+
+### 3. transform_data(data)
+
+**Purpose**: Applies transformations such as filtering, mutating, and summarizing to the data.
+
+**Inputs**:
+- `data`: A data frame to transform.
+
+**Outputs**:
+- A transformed data frame with summarized results (e.g., mean values by category).
+
+**Example**:
+```R
+transformed <- transform_data(cleaned)
+```
+
+**Challenges**:
+- Handling edge cases like empty data frames required robust error checking.
+
+### 4. analyze_data(data)
+
+**Purpose**: Performs analysis by grouping and summarizing transformed data.
+
+**Inputs**:
+- `data`: A data frame with `category` and `mean_value` columns.
+
+**Outputs**:
+- A data frame with analysis results (e.g., total values by group).
+
+**Example**:
+```R
+results <- analyze_data(transformed)
+```
+
+**Insights**:
+- Summing values by category helped identify dominant groups.
+
+### 5. visualize_data(data)
+
+**Purpose**: Creates a bar plot to visualize analysis results.
+
+**Inputs**:
+- `data`: A data frame with analysis results.
+
+**Outputs**:
+- A ggplot2 bar plot displayed in the output.
+
+**Example**:
+```R
+visualize_data(results)
+```
+
+**Improvements**:
+- Bar plots were chosen for clear presentation of categorical data.
+
+## Blog Post: The Power of R Markdown
+
+R Markdown is a powerful tool that combines code, visualizations, and narrative text into a single, reproducible document. It allows me to document my R functions in a professional format, integrating live code examples and outputs like plots directly into the text. This is especially useful for sharing my work on GitHub, as it provides both technical details and context for others to understand my project.
+
+In this assignment, I created an R Markdown file to document five key functions for my final project: `load_data`, `clean_data`, `transform_data`, `analyze_data`, and `visualize_data`. These functions form a pipeline for processing and analyzing data, and documenting them in Markdown helped me clarify their purpose and usage. The process also highlighted areas for improvement, such as refining error handling and visualization choices. Overall, R Markdown has made my work more organized, transparent, and ready to share with others.
+
+## Submission
+
+The Markdown file and related code are available at: [GitHub Repository](https://github.com/StevenBarden/LIS-4317-Week-12).
+
